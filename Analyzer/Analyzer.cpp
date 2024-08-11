@@ -33,7 +33,9 @@ bool Analyzer::AnalyzeFile(const char *file, std::vector<Analysis> &analyses, st
 
     Analyzer *analyzer = new Analyzer(reader);
     bool success = analyzer->PerformAnalysis(analyses, error);
+    
     delete analyzer;
+    delete reader;
 
     return success;
 }
